@@ -83,3 +83,25 @@ function start() {
     }
 }
 
+
+
+// Reset everything:
+function reset() {
+    bestTime();
+    clearInterval(interval);
+    interval = null;
+    timer = [0,0,0,0];
+    timerRunning = false;
+
+    testArea.value = "";
+    theTimer.innerHTML = timerStartPoint;
+    testWrapper.style.borderColor = "grey";
+    author.style.visibility = hidden;
+}
+
+getQuote();
+
+// Event listeners for keyboard input and the reset button:
+testArea.addEventListener("keypress", start, false);
+testArea.addEventListener("keyup", spellCheck, false);
+resetButton.addEventListener("click", reset, false);
