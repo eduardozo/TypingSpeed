@@ -85,6 +85,18 @@ function start() {
 
 
 
+// Last record
+function bestTime() {
+    let newRecord = theTimer.innerHTML;
+
+    if (newRecord > timerStartPoint) {
+        lastRecord = newRecord < lastRecord ? newRecord : lastRecord;
+
+        record.innerHTML = lastRecord;
+        record.parentElement.style.visibility = visible;
+    }
+}
+
 // Reset everything:
 function reset() {
     bestTime();
