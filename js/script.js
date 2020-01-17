@@ -83,7 +83,16 @@ function start() {
     }
 }
 
+// New challenge
+function nextChallenge() {
+    lastRecord = maxTime;
+    record.innerHTML = "";
+    theTimer.innerHTML = timerStartPoint;
+    record.parentElement.style.visibility = hidden;
 
+    reset();
+    getQuote();
+}
 
 // Last record
 function bestTime() {
@@ -117,3 +126,4 @@ getQuote();
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
 resetButton.addEventListener("click", reset, false);
+nextButton.addEventListener("click", nextChallenge, false);
